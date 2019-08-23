@@ -157,8 +157,8 @@ L.LatLngGraticule = L.Layer.extend({
             size = map._latLngToNewLayerPoint(se, e.zoom, e.center)._subtract(topLeft),
             origin = topLeft._add(size._multiplyBy((1 / 2) * (1 - 1 / scale)));
 
-        container.style[L.DomUtil.TRANSFORM] =
-                L.DomUtil.getTranslateString(origin) + ' scale(' + scale + ') ';
+//        container.style[L.DomUtil.TRANSFORM] =
+//                L.DomUtil.getTranslateString(origin) + ' scale(' + scale + ') ';
     },
 
     _reset: function () {
