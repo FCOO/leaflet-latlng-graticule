@@ -1,7 +1,7 @@
 /***********************************************
-gruntfile.js for leaflet.latlng-graticule
+gruntfile.js for leaflet-latlng-graticule
 
-https://github.com/FCOO/leaflet.latlng-graticule
+https://github.com/FCOO/leaflet-latlng-graticule
 
 ***********************************************/
 

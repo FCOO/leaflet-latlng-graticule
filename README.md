@@ -1,4 +1,4 @@
-# leaflet.latlng-graticule
+# leaflet-latlng-graticule
 >
 
 
@@ -11,10 +11,10 @@ It has been adapted to fit into the [FCOO package management](https://github.com
 
 ## Installation
 ### bower
-`bower install https://github.com/FCOO/leaflet.latlng-graticule.git --save`
+`bower install https://github.com/FCOO/leaflet-latlng-graticule.git --save`
 
 ## Demo
-http://FCOO.github.io/leaflet.latlng-graticule/demo/ 
+http://FCOO.github.io/leaflet-latlng-graticule/demo/ 
 
 ## Usage
 ```var myLeafletLatlngGraticule = L.leafletLatlngGraticule( options );```
@@ -32,7 +32,7 @@ See `\src\leaflet-latlng-graticule.js` for description of the options
 -->
 
 ## Copyright and License
-This plugin is licensed under the [MIT license](https://github.com/FCOO/leaflet.latlng-graticule/LICENSE).
+This plugin is licensed under the [MIT license](https://github.com/FCOO/leaflet-latlng-graticule/LICENSE).
 
 Copyright (c) 2018 [FCOO](https://github.com/FCOO)
 

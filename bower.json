@@ -1,15 +1,15 @@
 {
-  "name": "leaflet.latlng-graticule",
-  "version": "1.0.0",
-  "homepage": "https://github.com/FCOO/leaflet.latlng-graticule",
+  "name": "leaflet-latlng-graticule",
+  "version": "1.0.1",
+  "homepage": "https://github.com/FCOO/leaflet-latlng-graticule",
   "authors": [
     "Niels Holt"
   ],
   "description": "",
-  "main": "dist/leaflet.latlng-graticule.js",
+  "main": "dist/leaflet-latlng-graticule.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/FCOO/leaflet.latlng-graticule.git"
+    "url": "git://github.com/FCOO/leaflet-latlng-graticule.git"
   },
   "dependencies": {
     "jquery": "latest",

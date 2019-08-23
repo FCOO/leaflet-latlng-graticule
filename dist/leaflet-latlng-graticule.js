@@ -3,7 +3,7 @@
 
 	(c) 2018, FCOO
 
-	https://github.com/FCOO/leaflet.latlng-graticule
+	https://github.com/FCOO/leaflet-latlng-graticule
 	https://github.com/FCOO
 
 ****************************************************************************/
