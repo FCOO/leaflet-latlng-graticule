@@ -17,7 +17,8 @@
 </head>
 
 <body>
-	<div id="map" _style="margin: 50px; width: 400px; height: 600px"></div>
+    <div id="zoom"></div>
+    <div id="map" style="height: calc(100% - 50px)"></div>
 
 	<script src="bower_components.js"></script>
 	<script src="../src/leaflet-latlng-graticule.js"></script>
@@ -43,10 +44,10 @@
 
         llg.addTo(map);
 
+        map.on('zoomend', function(){
+            $('#zoom').text('ZOOM='+map.getZoom());
+        });
         map.on('click', function(){
-//            llg.setType( L.latLngGraticuleType.TYPE_MAJOR_LINE );
-
-
             decimal = !decimal;
             llg._onLatLngFormatChange( decimal ? window.latLngFormat.LATLNGFORMAT_DD : 6 );
         });

@@ -70,8 +70,7 @@
             */
 
             zoomInterval: {
-//                latitude: []
-                longitude: [
+                latitude: [
                     {start:  1, end:  1, interval: 120,   minorIntervalDivider: 3},
                     {start:  2, end:  2, interval:  60,   minorIntervalDivider: 3},
                     {start:  3, end:  3, interval:  30,   minorIntervalDivider: 3},
@@ -92,7 +91,31 @@
                     {start: 18, end: 18, interval: [.01,   1 /60], minorIntervalDivider: [16, 32]},
                     {start: 19, end: 19, interval: [.01,   1 /60], minorIntervalDivider: [32, 64]},
                     {start: 20, end: 20, interval: [.01,   1 /60], minorIntervalDivider: [64,128]},
+                ],
+
+                longitude: [
+                    {start:  1, end:  1, interval: 180/*120*/,  minorIntervalDivider: 3},
+                    {start:  2, end:  2, interval:  90/* 60*/,  minorIntervalDivider: 3},
+                    {start:  3, end:  3, interval:  45/* 30*/,  minorIntervalDivider: 3},
+                    {start:  4, end:  4, interval:  20/* 15*/,  minorIntervalDivider: 2/*3*/},
+                    {start:  5, end:  5, interval:  10/*  8*/,  minorIntervalDivider: 2},
+                    {start:  6, end:  6, interval:   6/*  4*/,  minorIntervalDivider: 2},
+                    {start:  7, end:  7, interval:   3/*  2*/,  minorIntervalDivider: 3/*2*/},
+                    {start:  8, end:  8, interval:   1,   minorIntervalDivider: 2},
+                    {start:  9, end:  9, interval:    .5, minorIntervalDivider: 2},
+                    {start: 10, end: 10, interval: [.25,  20 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 11, end: 11, interval: [.1 ,  10 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 12, end: 12, interval: [.05,   5 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 13, end: 13, interval: [.025,  2 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 14, end: 14, interval: [.01,   1 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 15, end: 15, interval: [.01,   1 /60], minorIntervalDivider: [ 2,  4]},
+                    {start: 16, end: 16, interval: [.01,   1 /60], minorIntervalDivider: [ 4,  8]},
+                    {start: 17, end: 17, interval: [.01,   1 /60], minorIntervalDivider: [ 8, 16]},
+                    {start: 18, end: 18, interval: [.01,   1 /60], minorIntervalDivider: [16, 32]},
+                    {start: 19, end: 19, interval: [.01,   1 /60], minorIntervalDivider: [32, 64]},
+                    {start: 20, end: 20, interval: [.01,   1 /60], minorIntervalDivider: [64,128]},
                 ]
+
             }
         },
 
