@@ -49,7 +49,7 @@
         });
         map.on('click', function(){
             decimal = !decimal;
-            llg._onLatLngFormatChange( decimal ? window.latLngFormat.LATLNGFORMAT_DD : 6 );
+            window.latLngFormat.setFormat(decimal ? window.latLngFormat.LATLNGFORMAT_DD : 6 );
         });
     });
 

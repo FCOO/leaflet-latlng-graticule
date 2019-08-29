@@ -122,10 +122,11 @@
 
         //**********************************************************
         initialize: function (options) {
-
             L.setOptions(this, options);
 
-            this._onLatLngFormatChange( window.latLngFormat.options.formatId );
+            this._changeLatLngFormat( window.latLngFormat.options.formatId );
+
+            window.latLngFormat.onChange( this._changeLatLngFormat, this );
 
             if (!this.options.zoomInterval.latitude)
                 this.options.zoomInterval.latitude = this.options.zoomInterval.longitude;
@@ -244,13 +245,12 @@
         },
 
         //**********************************************************
-        _onLatLngFormatChange: function( newFormatId, noDraw ){
-            if (this.drawing)
-                return;
+        _changeLatLngFormat: function( newFormatId ){
+            var oldFormatId = this.options.latLngFormatId;
             this.options.latLngFormatId = newFormatId > window.latLngFormat.LATLNGFORMAT_DD ? window.latLngFormat.LATLNGFORMAT_DMM : newFormatId;
             this.options.isDecimal = this.options.latLngFormatId == window.latLngFormat.LATLNGFORMAT_DD;
 
-            if (!noDraw)
+            if (oldFormatId != this.options.latLngFormatId)
                 this._draw( true );
         },
 
@@ -468,12 +468,12 @@
         _getLabel: function( lat, lng ){
             var saveFormatId = window.latLngFormat.options.formatId;
             if (saveFormatId > window.latLngFormat.LATLNGFORMAT_DD)
-                window.latLngFormat.setFormat( this.options.latLngFormatId );
+                window.latLngFormat.setTempFormat( this.options.latLngFormatId );
 
             var result = window.latLngFormat( lat || 0, lng || 0 ).formatTrunc({asArray: true})[lat === undefined ? 1 : 0];
 
             if (saveFormatId > window.latLngFormat.LATLNGFORMAT_DD)
-                window.latLngFormat.setFormat( saveFormatId );
+                window.latLngFormat.setTempFormat( saveFormatId );
             return result;
         },
 
@@ -487,7 +487,7 @@
             this.ctx.fillRect(lowerLeft - 2, lowerTop - textHeight - 1, textWidth + 4, textHeight + 4);
 
             //Write the label
-/* TODO: Find style to give white text-shadow
+/* TODO: Find style to give white text-shadow a la:
             this.ctx.shadowColor = 'rgba(0,0,0,0.28)';
             this.ctx.shadowBlur = 4;
 */
