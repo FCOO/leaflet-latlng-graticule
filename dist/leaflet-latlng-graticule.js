@@ -32,19 +32,18 @@
     L.LatLngGraticule = L.Layer.extend({
         includes: L.Evented,
         options: {
-//            type     : TYPE_MAJOR_LINE + TYPE_MINOR_TICK,
-            type     : TYPE_MAJOR_LINE + TYPE_MINOR_LINE,
+            type     : TYPE_MAJOR_LINE + TYPE_MINOR_TICK,
 
             showLabel: true,
-            weight: 2,
-            color: 'rgba(0,0,0,.6)',//'#aaa',
+            weight   : 2,
+            color    : 'rgba(0,0,0,.6)',//'#aaa',
 
             shadowWidth: 1, //On each side of the line
             shadowColor: 'rgba(255,255,255,.28)',
 
             miniorOptions: {
                 weight: 1,
-                color: 'rgba(80,80,80,.6)',//'#aaa',
+                color : 'rgba(80,80,80,.6)',//'#aaa',
             },
             fontSize  : 10,
             fontFamily: "Verdana",
@@ -71,48 +70,47 @@
 
             zoomInterval: {
                 latitude: [
-                    <!-- {start:  1, end:  1, interval: 180,   minorIntervalDivider: 3}, -->
-                    {start:  1, end:  1, interval:  90,   minorIntervalDivider: 3},
-                    {start:  2, end:  2, interval:  45,   minorIntervalDivider: 3},
-                    {start:  3, end:  3, interval:  20,   minorIntervalDivider: 2},
-                    {start:  4, end:  4, interval:  10,   minorIntervalDivider: 2},
-                    {start:  5, end:  5, interval:   6,   minorIntervalDivider: 3},
-                    {start:  6, end:  6, interval:   3,   minorIntervalDivider: 3},
-                    {start:  7, end:  7, interval:   2,   minorIntervalDivider: 4},
-                    {start:  8, end:  8, interval:   1,   minorIntervalDivider: 4},
-                    {start:  9, end:  9, interval:   .5,  minorIntervalDivider: [2, 3]},
-                    {start: 10, end: 10, interval:   .25, minorIntervalDivider: [1, 2]},
-                    {start: 11, end: 11, interval:   .1,  minorIntervalDivider: [1, 2]},
-                    {start: 12, end: 12, interval: [.05,  4 /60], minorIntervalDivider: [ 1,  2]},
-                    {start: 13, end: 13, interval: [.025, 2 /60], minorIntervalDivider: [ 1,  2]},
-                    {start: 14, end: 14, interval: [.01,  1 /60], minorIntervalDivider: [ 2,  4]},
-                    {start: 15, end: 15, interval: [.01,  1 /60], minorIntervalDivider: [ 4,  8]},
-                    {start: 16, end: 16, interval: [.01,  1 /60], minorIntervalDivider: [ 8, 16]},
-                    {start: 17, end: 17, interval: [.01,  1 /60], minorIntervalDivider: [16, 32]},
-                    {start: 18, end: 18, interval: [.01,  1 /60], minorIntervalDivider: [32, 64]},
+                    {start:  1, end:  2, interval:  90,   minorIntervalDivider: 3},
+                    {start:  2, end:  3, interval:  45,   minorIntervalDivider: 3},
+                    {start:  3, end:  4, interval:  20,   minorIntervalDivider: 2},
+                    {start:  4, end:  5, interval:  10,   minorIntervalDivider: 2},
+                    {start:  5, end:  6, interval:   6,   minorIntervalDivider: 3},
+                    {start:  6, end:  7, interval:   3,   minorIntervalDivider: 3},
+                    {start:  7, end:  8, interval:   2,   minorIntervalDivider: 4},
+                    {start:  8, end:  9, interval:   1,   minorIntervalDivider: 4},
+                    {start:  9, end: 10, interval:   .5,  minorIntervalDivider: [2, 3]},
+                    {start: 10, end: 11, interval:   .25, minorIntervalDivider: [1, 2]},
+                    {start: 11, end: 12, interval:   .1,  minorIntervalDivider: [1, 2]},
+                    {start: 12, end: 13, interval: [.05,  4 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 13, end: 14, interval: [.025, 2 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 14, end: 15, interval: [.01,  1 /60], minorIntervalDivider: [ 2,  4]},
+                    {start: 15, end: 16, interval: [.01,  1 /60], minorIntervalDivider: [ 4,  8]},
+                    {start: 16, end: 17, interval: [.01,  1 /60], minorIntervalDivider: [ 8, 16]},
+                    {start: 17, end: 18, interval: [.01,  1 /60], minorIntervalDivider: [16, 32]},
+                    {start: 18, end: 19, interval: [.01,  1 /60], minorIntervalDivider: [32, 64]},
                     {start: 19, end: 20, interval: [.01,  1 /60], minorIntervalDivider: [64,128]},
                 ],
                 longitude: [
-                    {start:  1, end:  1, interval: 180,   minorIntervalDivider: 3},
-                    {start:  2, end:  2, interval:  90,   minorIntervalDivider: 3},
-                    {start:  3, end:  3, interval:  45,   minorIntervalDivider: 3},
-                    {start:  4, end:  4, interval:  20,   minorIntervalDivider: 2},
-                    {start:  5, end:  5, interval:  10,   minorIntervalDivider: 2},
-                    {start:  6, end:  6, interval:   6,   minorIntervalDivider: 3},
-                    {start:  7, end:  7, interval:   3,   minorIntervalDivider: 3},
-                    {start:  8, end:  8, interval:   2,   minorIntervalDivider: 4},
-                    {start:  9, end:  9, interval:   1,   minorIntervalDivider: 4},
-                    {start: 10, end: 10, interval:   .5,  minorIntervalDivider: [2, 3]},
-                    {start: 11, end: 11, interval:   .25, minorIntervalDivider: [1, 2]},
-                    {start: 12, end: 12, interval:   .1,  minorIntervalDivider: [1, 2]},
-                    {start: 13, end: 13, interval: [.05,  4 /60], minorIntervalDivider: [ 1,  2]},
-                    {start: 14, end: 14, interval: [.025, 2 /60], minorIntervalDivider: [ 1,  2]},
-                    {start: 15, end: 15, interval: [.01,  1 /60], minorIntervalDivider: [ 2,  4]},
-                    {start: 16, end: 16, interval: [.01,  1 /60], minorIntervalDivider: [ 4,  8]},
-                    {start: 17, end: 17, interval: [.01,  1 /60], minorIntervalDivider: [ 8, 16]},
-                    {start: 18, end: 18, interval: [.01,  1 /60], minorIntervalDivider: [16, 32]},
-                    {start: 19, end: 19, interval: [.01,  1 /60], minorIntervalDivider: [32, 64]},
-                    {start: 20, end: 20, interval: [.01,  1 /60], minorIntervalDivider: [64,128]},
+                    {start:  1, end:  2, interval: 180,   minorIntervalDivider: 3},
+                    {start:  2, end:  3, interval:  90,   minorIntervalDivider: 3},
+                    {start:  3, end:  4, interval:  45,   minorIntervalDivider: 3},
+                    {start:  4, end:  5, interval:  20,   minorIntervalDivider: 2},
+                    {start:  5, end:  6, interval:  10,   minorIntervalDivider: 2},
+                    {start:  6, end:  7, interval:   6,   minorIntervalDivider: 3},
+                    {start:  7, end:  8, interval:   3,   minorIntervalDivider: 3},
+                    {start:  8, end:  9, interval:   2,   minorIntervalDivider: 4},
+                    {start:  9, end: 10, interval:   1,   minorIntervalDivider: 4},
+                    {start: 10, end: 11, interval:   .5,  minorIntervalDivider: [2, 3]},
+                    {start: 11, end: 12, interval:   .25, minorIntervalDivider: [1, 2]},
+                    {start: 12, end: 13, interval:   .1,  minorIntervalDivider: [1, 2]},
+                    {start: 13, end: 14, interval: [.05,  4 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 14, end: 15, interval: [.025, 2 /60], minorIntervalDivider: [ 1,  2]},
+                    {start: 15, end: 16, interval: [.01,  1 /60], minorIntervalDivider: [ 2,  4]},
+                    {start: 16, end: 17, interval: [.01,  1 /60], minorIntervalDivider: [ 4,  8]},
+                    {start: 17, end: 18, interval: [.01,  1 /60], minorIntervalDivider: [ 8, 16]},
+                    {start: 18, end: 19, interval: [.01,  1 /60], minorIntervalDivider: [16, 32]},
+                    {start: 19, end: 20, interval: [.01,  1 /60], minorIntervalDivider: [32, 64]},
+                    {start: 20, end: 21, interval: [.01,  1 /60], minorIntervalDivider: [64,128]},
                 ]
 
             }
@@ -273,7 +271,7 @@
             function getCurrentIntervals( intervalArray ){
                 var result = {};
                 $.each( intervalArray, function(index, dict ){
-                    if (dict.start <= zoom && dict.end && dict.end >= zoom) {
+                    if (zoom >= dict.start && dict.end && zoom < dict.end) {
                         result.interval      = $.isArray(dict.interval) ? dict.interval[intervalIndex] : dict.interval;
                         result.minorInterval = $.isArray(dict.minorInterval) ? dict.minorInterval[intervalIndex] : dict.minorInterval;
                         if (result.minorInterval)
@@ -717,7 +715,7 @@
 
     });
 
-    L.latlngGraticule = function (options) {
+    L.latLngGraticule = function (options) {
         return new L.LatLngGraticule(options);
     };
 }(jQuery, L, this, document));
