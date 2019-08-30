@@ -1,37 +1,37 @@
 {
-    "name": "leaflet-latlng-graticule",
-    "version": "1.1.0",
-    "homepage": "https://github.com/FCOO/leaflet-latlng-graticule",
-    "authors": [
-        "Niels Holt"
-    ],
-    "description": "",
-    "main": "dist/leaflet-latlng-graticule.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/FCOO/leaflet-latlng-graticule.git"
-    },
-    "dependencies": {
-        "jquery": "latest",
-        "leaflet": "1.4.0",
-        "javascript-utilities": "FCOO/javascript-utilities#^1.1.0",
-        "latlng-format": "fcoo/latlng-format#latest"
-    },
-    "devDependencies": {
-        "bourbon": "latest",
-        "modernizr-mixin": "latest",
-        "mathsass": "latest"
-    },
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "moduleType": [
-        "es6"
-    ],
-    "overrides": {}
+  "name": "leaflet-latlng-graticule",
+  "version": "1.2.0",
+  "homepage": "https://github.com/FCOO/leaflet-latlng-graticule",
+  "authors": [
+    "Niels Holt"
+  ],
+  "description": "",
+  "main": "dist/leaflet-latlng-graticule.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/leaflet-latlng-graticule.git"
+  },
+  "dependencies": {
+    "jquery": "latest",
+    "leaflet": "1.4.0",
+    "javascript-utilities": "FCOO/javascript-utilities#^1.1.0",
+    "latlng-format": "fcoo/latlng-format#latest"
+  },
+  "devDependencies": {
+    "bourbon": "latest",
+    "modernizr-mixin": "latest",
+    "mathsass": "latest"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "overrides": {}
 }
