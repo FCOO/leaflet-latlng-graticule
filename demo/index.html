@@ -19,6 +19,7 @@
 <body>
     <div id="zoom"></div>
     <div id="map" style="height: calc(100% - 50px)"></div>
+    <!-- <div id="map" style="height: 30px; width: 230px"></div> -->
 
 	<script src="bower_components.js"></script>
 	<script src="../src/leaflet-latlng-graticule.js"></script>
@@ -36,25 +37,49 @@
 		$(function() {
 			var map =
                     L.map('map', {
-                        zoomSnap: 0.25
+                        zoomSnap: 0.25, zoomControl: false, attribution: false,
                     })
-                    .setView([56.2, 11.5], 1);
+                    .setView([67, 11.5], 7);
 
 			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</a>'
+
+                _attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</a>'
             }).addTo(map);
 
-        var llg = L.latLngGraticule({type: L.latLngGraticuleType.TYPE_MAJOR_LINE + L.latLngGraticuleType.TYPE_MINOR_LINE});
+        var llg = L.latLngGraticule({showLabel: false, type: L.latLngGraticuleType.TYPE_MAJOR_TICK/* + L.latLngGraticuleType.TYPE_MINOR_LINE*/});
 
         llg.addTo(map);
 
         map.on('zoomend', function(){
             $('#zoom').text('ZOOM='+map.getZoom());
         });
+        var ns = L.latLngGraticuleType,
+            formats = [
+                ns.TYPE_MAJOR_TICK + ns.TYPE_MINOR_TICK,
+                ns.TYPE_MAJOR_LINE + ns.TYPE_MINOR_TICK,
+                ns.TYPE_MAJOR_LINE + ns.TYPE_MINOR_LINE
+            ],
+            findex = 0;
+/*
+    var TYPE_MAJOR_LINE = ns.TYPE_MAJOR_LINE = 1,
+        TYPE_MAJOR_TICK = ns.TYPE_MAJOR_TICK = 2,
+        TYPE_MINOR_LINE = ns.TYPE_MINOR_LINE = 4,
+        TYPE_MINOR_TICK = ns.TYPE_MINOR_TICK = 8,
+        TYPE_MAJOR_ANY  = TYPE_MAJOR_LINE + TYPE_MAJOR_TICK,
+        TYPE_MINOR_ANY  = TYPE_MINOR_LINE + TYPE_MINOR_TICK,
+        TYPE_TICK_ANY   = TYPE_MAJOR_TICK + TYPE_MINOR_TICK;
+*/
+
+
+
         map.on('click', function(){
             decimal = !decimal;
-            window.latLngFormat.setFormat(decimal ? window.latLngFormat.LATLNGFORMAT_DD : 6 );
+//HER            llg.options.showLabel = !llg.options.showLabel;
+            findex = findex+1;
+            findex = findex==formats.length?0:findex;
+//HER            window.latLngFormat.setFormat(decimal ? window.latLngFormat.LATLNGFORMAT_DD : 6 );
+            llg.setType(formats[findex]);
         });
     });
 
