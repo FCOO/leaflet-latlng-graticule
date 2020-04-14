@@ -47,9 +47,13 @@
                 _attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</a>'
             }).addTo(map);
 
-        var llg = L.latLngGraticule({showLabel: false, type: L.latLngGraticuleType.TYPE_MAJOR_TICK/* + L.latLngGraticuleType.TYPE_MINOR_LINE*/});
-
+        var llg = L.latLngGraticule({showLabel: true, type: L.latLngGraticuleType.TYPE_MAJOR_TICK/* + L.latLngGraticuleType.TYPE_MINOR_LINE*/});
         llg.addTo(map);
+
+setTimeout( function(){
+    llg.addTo(map);
+    llg.setType(1);
+}, 2000);
 
         map.on('zoomend', function(){
             $('#zoom').text('ZOOM='+map.getZoom());
