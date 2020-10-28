@@ -1,6 +1,6 @@
 {
   "name": "leaflet-latlng-graticule",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "homepage": "https://github.com/FCOO/leaflet-latlng-graticule",
   "authors": [
     "Niels Holt"
@@ -14,6 +14,7 @@
   "dependencies": {
     "jquery": "latest",
     "leaflet": "latest",
+    "leaflet-bugfix": "fcoo/leaflet-bugfix#^2.0.2",
     "javascript-utilities": "FCOO/javascript-utilities#^1.1.0",
     "latlng-format": "fcoo/latlng-format#latest"
   },
@@ -32,13 +33,5 @@
   ],
   "moduleType": [
     "es6"
-  ],
-  "overrides": {
-    "leaflet": {
-      "main": [
-        "dist/leaflet-src.js",
-        "dist/leaflet.css"
-      ]
-    }
-  }
+  ]
 }
